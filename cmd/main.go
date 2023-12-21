@@ -23,9 +23,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// create router
 	router := mux.NewRouter()
 	routes.Routes(router)
 
 	log.Println("Started server at port : ", 8080)
-	http.ListenAndServe(":8080", router)
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
